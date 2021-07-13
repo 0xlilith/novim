@@ -3,11 +3,11 @@
  */
 
 
-#include <stdlib>
+#include <stdlib.h>
 #include <unistd.h>
 #include <termios.h>
 
-struc termios orig_termios;
+struct termios orig_termios;
 
 void disableRawMode(){ /* turining off echo attribute when quiting the program */
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
